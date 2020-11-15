@@ -50,5 +50,13 @@
         "@pika/plugin-build-node"
       ]
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanhoofmaarten/stripe-api-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vanhoofmaarten/stripe-api-ts/issues"
+  },
+  "homepage": "https://github.com/vanhoofmaarten/stripe-api-ts#readme"
 }
