@@ -8,7 +8,8 @@
     "generate": "node generate.js",
     "build": "pika build",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "stripe",
