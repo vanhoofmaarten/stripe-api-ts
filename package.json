@@ -14,7 +14,7 @@
     "stripe",
     "typescript"
   ],
-  "author": "mrtnvh",
+  "author": "@mrtnvh",
   "license": "MIT",
   "dependencies": {
     "oazapfts": "^3.1.3"
