@@ -8,7 +8,7 @@ const prettier = require("prettier");
 const OPEN_API_URL =
   "https://raw.githubusercontent.com/stripe/openapi/master/openapi/spec3.json";
 const DEST_PATH = "src";
-const DEST_FILE = "stripe.api.ts";
+const DEST_FILE = "index.ts";
 
 (async () => {
   try {
