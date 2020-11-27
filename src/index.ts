@@ -41,6 +41,7 @@ export type AccountCapabilities = {
   eps_payments?: "active" | "inactive" | "pending";
   fpx_payments?: "active" | "inactive" | "pending";
   giropay_payments?: "active" | "inactive" | "pending";
+  grabpay_payments?: "active" | "inactive" | "pending";
   ideal_payments?: "active" | "inactive" | "pending";
   jcb_payments?: "active" | "inactive" | "pending";
   legacy_payments?: "active" | "inactive" | "pending";
@@ -693,6 +694,7 @@ export type Payment_method_fpx = {
     | "uob";
 };
 export type Payment_method_giropay = {};
+export type Payment_method_grabpay = {};
 export type Payment_method_ideal = {
   bank?:
     | (
@@ -814,6 +816,60 @@ export type DisputeEvidenceDetails = {
   has_evidence: boolean;
   past_due: boolean;
   submission_count: number;
+};
+export type Tax_id_verification = {
+  status: "pending" | "unavailable" | "unverified" | "verified";
+  verified_address?: string | null;
+  verified_name?: string | null;
+};
+export type Tax_id = {
+  country?: string | null;
+  created: number;
+  customer?: (string | Customer) | null;
+  id: string;
+  livemode: boolean;
+  object: "tax_id";
+  type:
+    | "ae_trn"
+    | "au_abn"
+    | "br_cnpj"
+    | "br_cpf"
+    | "ca_bn"
+    | "ca_qst"
+    | "ch_vat"
+    | "cl_tin"
+    | "es_cif"
+    | "eu_vat"
+    | "hk_br"
+    | "id_npwp"
+    | "in_gst"
+    | "jp_cn"
+    | "jp_rn"
+    | "kr_brn"
+    | "li_uid"
+    | "mx_rfc"
+    | "my_frp"
+    | "my_itn"
+    | "my_sst"
+    | "no_vat"
+    | "nz_gst"
+    | "ru_inn"
+    | "ru_kpp"
+    | "sa_vat"
+    | "sg_gst"
+    | "sg_uen"
+    | "th_vat"
+    | "tw_vat"
+    | "unknown"
+    | "us_ein"
+    | "za_vat";
+  value: string;
+  verification?: Tax_id_verification | null;
+};
+export type Deleted_tax_id = {
+  deleted: true;
+  id: string;
+  object: "tax_id";
 };
 export type InvoicesResourceInvoiceTaxID = {
   type:
@@ -1044,8 +1100,13 @@ export type SetupIntentNextAction = {
 export type Setup_intent_payment_method_options_card = {
   request_three_d_secure?: ("any" | "automatic" | "challenge_only") | null;
 };
+export type Setup_intent_payment_method_options_mandate_options_sepa_debit = {};
+export type Setup_intent_payment_method_options_sepa_debit = {
+  mandate_options?: Setup_intent_payment_method_options_mandate_options_sepa_debit;
+};
 export type SetupIntentPaymentMethodOptions = {
   card?: Setup_intent_payment_method_options_card;
+  sepa_debit?: Setup_intent_payment_method_options_sepa_debit;
 };
 export type SetupIntent = {
   application?: (string | Application) | null;
@@ -1206,8 +1267,8 @@ export type InvoiceLineItem = {
   quantity?: number | null;
   subscription?: string | null;
   subscription_item?: string;
-  tax_amounts?: InvoiceTaxAmount[] | null;
-  tax_rates?: TaxRate[] | null;
+  tax_amounts?: InvoiceTaxAmount[];
+  tax_rates?: TaxRate[];
   type: "invoiceitem" | "subscription";
 };
 export type InvoicesStatusTransitions = {
@@ -1395,6 +1456,7 @@ export type InvoiceTransferData = {
 export type Invoice = {
   account_country?: string | null;
   account_name?: string | null;
+  account_tax_ids?: (string | Tax_id | Deleted_tax_id)[] | null;
   amount_due: number;
   amount_paid: number;
   amount_remaining: number;
@@ -1431,7 +1493,7 @@ export type Invoice = {
   default_source?:
     | (string | AlipayAccount | BankAccount | BitcoinReceiver | Card | Source)
     | null;
-  default_tax_rates?: TaxRate[] | null;
+  default_tax_rates: TaxRate[];
   description?: string | null;
   discount?: Discount | null;
   discounts?: (string | Discount | DeletedDiscount)[] | null;
@@ -1475,7 +1537,7 @@ export type Invoice = {
   threshold_reason?: InvoiceThresholdReason;
   total: number;
   total_discount_amounts?: DiscountsResourceDiscountAmount[] | null;
-  total_tax_amounts?: InvoiceTaxAmount[] | null;
+  total_tax_amounts: InvoiceTaxAmount[];
   transfer_data?: InvoiceTransferData | null;
   webhooks_delivered_at?: number | null;
 };
@@ -1537,6 +1599,10 @@ export type Payment_method_options_oxxo = {
   expires_after_days: number;
 };
 export type Payment_method_options_p24 = {};
+export type Payment_intent_payment_method_options_mandate_options_sepa_debit = {};
+export type Payment_intent_payment_method_options_sepa_debit = {
+  mandate_options?: Payment_intent_payment_method_options_mandate_options_sepa_debit;
+};
 export type Payment_method_options_sofort = {
   preferred_language?: ("de" | "en" | "es" | "fr" | "it" | "nl" | "pl") | null;
 };
@@ -1546,6 +1612,7 @@ export type PaymentIntentPaymentMethodOptions = {
   card?: Payment_intent_payment_method_options_card;
   oxxo?: Payment_method_options_oxxo;
   p24?: Payment_method_options_p24;
+  sepa_debit?: Payment_intent_payment_method_options_sepa_debit;
   sofort?: Payment_method_options_sofort;
 };
 export type RadarReviewResourceLocation = {
@@ -4265,6 +4332,9 @@ export type Payment_method_details_giropay = {
   bic?: string | null;
   verified_name?: string | null;
 };
+export type Payment_method_details_grabpay = {
+  transaction_id?: string | null;
+};
 export type Payment_method_details_ideal = {
   bank?:
     | (
@@ -4383,6 +4453,7 @@ export type Payment_method_details = {
   eps?: Payment_method_details_eps;
   fpx?: Payment_method_details_fpx;
   giropay?: Payment_method_details_giropay;
+  grabpay?: Payment_method_details_grabpay;
   ideal?: Payment_method_details_ideal;
   interac_present?: Payment_method_details_interac_present;
   klarna?: Payment_method_details_klarna;
@@ -4480,6 +4551,7 @@ export type PaymentMethod = {
   eps?: Payment_method_eps;
   fpx?: Payment_method_fpx;
   giropay?: Payment_method_giropay;
+  grabpay?: Payment_method_grabpay;
   id: string;
   ideal?: Payment_method_ideal;
   interac_present?: Payment_method_interac_present;
@@ -4498,10 +4570,13 @@ export type PaymentMethod = {
     | "bacs_debit"
     | "bancontact"
     | "card"
+    | "card_present"
     | "eps"
     | "fpx"
     | "giropay"
+    | "grabpay"
     | "ideal"
+    | "interac_present"
     | "oxxo"
     | "p24"
     | "sepa_debit"
@@ -4511,55 +4586,6 @@ export type InvoiceSettingCustomerSetting = {
   custom_fields?: InvoiceSettingCustomField[] | null;
   default_payment_method?: (string | PaymentMethod) | null;
   footer?: string | null;
-};
-export type Tax_id_verification = {
-  status: "pending" | "unavailable" | "unverified" | "verified";
-  verified_address?: string | null;
-  verified_name?: string | null;
-};
-export type Tax_id = {
-  country?: string | null;
-  created: number;
-  customer?: (string | Customer) | null;
-  id: string;
-  livemode: boolean;
-  object: "tax_id";
-  type:
-    | "ae_trn"
-    | "au_abn"
-    | "br_cnpj"
-    | "br_cpf"
-    | "ca_bn"
-    | "ca_qst"
-    | "ch_vat"
-    | "cl_tin"
-    | "es_cif"
-    | "eu_vat"
-    | "hk_br"
-    | "id_npwp"
-    | "in_gst"
-    | "jp_cn"
-    | "jp_rn"
-    | "kr_brn"
-    | "li_uid"
-    | "mx_rfc"
-    | "my_frp"
-    | "my_itn"
-    | "my_sst"
-    | "no_vat"
-    | "nz_gst"
-    | "ru_inn"
-    | "ru_kpp"
-    | "sa_vat"
-    | "sg_gst"
-    | "sg_uen"
-    | "th_vat"
-    | "tw_vat"
-    | "unknown"
-    | "us_ein"
-    | "za_vat";
-  value: string;
-  verification?: Tax_id_verification | null;
 };
 export type Customer = {
   address?: Address | null;
@@ -4870,15 +4896,12 @@ export type Card = {
   customer?: (string | Customer | DeletedCustomer) | null;
   cvc_check?: string | null;
   default_for_currency?: boolean | null;
-  description?: string;
   dynamic_last4?: string | null;
   exp_month: number;
   exp_year: number;
   fingerprint?: string | null;
   funding: string;
   id: string;
-  iin?: string;
-  issuer?: string;
   last4: string;
   metadata?: {
     [key: string]: string;
@@ -5457,11 +5480,6 @@ export type Polymorphic4 =
   | DeletedBankAccount
   | BitcoinDeletedReceiver
   | DeletedCard;
-export type Deleted_tax_id = {
-  deleted: true;
-  id: string;
-  object: "tax_id";
-};
 export type EphemeralKey = {
   created: number;
   expires: number;
@@ -6098,6 +6116,9 @@ export function postAccount(
         requested?: boolean;
       };
       giropay_payments?: {
+        requested?: boolean;
+      };
+      grabpay_payments?: {
         requested?: boolean;
       };
       ideal_payments?: {
@@ -7627,6 +7648,9 @@ export function postAccounts(
       giropay_payments?: {
         requested?: boolean;
       };
+      grabpay_payments?: {
+        requested?: boolean;
+      };
       ideal_payments?: {
         requested?: boolean;
       };
@@ -7990,6 +8014,9 @@ export function postAccountsAccount(
         requested?: boolean;
       };
       giropay_payments?: {
+        requested?: boolean;
+      };
+      grabpay_payments?: {
         requested?: boolean;
       };
       ideal_payments?: {
@@ -11122,6 +11149,7 @@ export function postCheckoutSessions(
       | "eps"
       | "fpx"
       | "giropay"
+      | "grabpay"
       | "ideal"
       | "p24"
       | "sepa_debit"
@@ -15231,6 +15259,7 @@ export function getInvoices(
  */
 export function postInvoices(
   body: {
+    account_tax_ids?: string[] | "";
     application_fee_amount?: number;
     auto_advance?: boolean;
     collection_method?: "charge_automatically" | "send_invoice";
@@ -15682,6 +15711,7 @@ export function getInvoicesInvoice(
 export function postInvoicesInvoice(
   invoice: string,
   body?: {
+    account_tax_ids?: string[] | "";
     application_fee_amount?: number;
     auto_advance?: boolean;
     collection_method?: "charge_automatically" | "send_invoice";
@@ -21377,6 +21407,7 @@ export function postPaymentIntents(
           | "uob";
       };
       giropay?: {};
+      grabpay?: {};
       ideal?: {
         bank?:
           | "abn_amro"
@@ -21439,6 +21470,7 @@ export function postPaymentIntents(
         | "eps"
         | "fpx"
         | "giropay"
+        | "grabpay"
         | "ideal"
         | "oxxo"
         | "p24"
@@ -21485,6 +21517,11 @@ export function postPaymentIntents(
           }
         | "";
       p24?: {} | "";
+      sepa_debit?:
+        | {
+            mandate_options?: {};
+          }
+        | "";
       sofort?:
         | {
             preferred_language?: "de" | "en" | "es" | "fr" | "it" | "nl" | "pl";
@@ -21656,6 +21693,7 @@ export function postPaymentIntentsIntent(
           | "uob";
       };
       giropay?: {};
+      grabpay?: {};
       ideal?: {
         bank?:
           | "abn_amro"
@@ -21718,6 +21756,7 @@ export function postPaymentIntentsIntent(
         | "eps"
         | "fpx"
         | "giropay"
+        | "grabpay"
         | "ideal"
         | "oxxo"
         | "p24"
@@ -21764,6 +21803,11 @@ export function postPaymentIntentsIntent(
           }
         | "";
       p24?: {} | "";
+      sepa_debit?:
+        | {
+            mandate_options?: {};
+          }
+        | "";
       sofort?:
         | {
             preferred_language?: "de" | "en" | "es" | "fr" | "it" | "nl" | "pl";
@@ -21998,6 +22042,7 @@ export function postPaymentIntentsIntentConfirm(
           | "uob";
       };
       giropay?: {};
+      grabpay?: {};
       ideal?: {
         bank?:
           | "abn_amro"
@@ -22060,6 +22105,7 @@ export function postPaymentIntentsIntentConfirm(
         | "eps"
         | "fpx"
         | "giropay"
+        | "grabpay"
         | "ideal"
         | "oxxo"
         | "p24"
@@ -22106,6 +22152,11 @@ export function postPaymentIntentsIntentConfirm(
           }
         | "";
       p24?: {} | "";
+      sepa_debit?:
+        | {
+            mandate_options?: {};
+          }
+        | "";
       sofort?:
         | {
             preferred_language?: "de" | "en" | "es" | "fr" | "it" | "nl" | "pl";
@@ -22168,6 +22219,7 @@ export function getPaymentMethods(
     | "eps"
     | "fpx"
     | "giropay"
+    | "grabpay"
     | "ideal"
     | "oxxo"
     | "p24"
@@ -22287,6 +22339,7 @@ export function postPaymentMethods(
         | "uob";
     };
     giropay?: {};
+    grabpay?: {};
     ideal?: {
       bank?:
         | "abn_amro"
@@ -22351,6 +22404,7 @@ export function postPaymentMethods(
       | "eps"
       | "fpx"
       | "giropay"
+      | "grabpay"
       | "ideal"
       | "oxxo"
       | "p24"
@@ -25563,6 +25617,9 @@ export function postSetupIntents(
       card?: {
         request_three_d_secure?: "any" | "automatic";
       };
+      sepa_debit?: {
+        mandate_options?: {};
+      };
     };
     payment_method_types?: string[];
     return_url?: string;
@@ -25653,6 +25710,9 @@ export function postSetupIntentsIntent(
     payment_method_options?: {
       card?: {
         request_three_d_secure?: "any" | "automatic";
+      };
+      sepa_debit?: {
+        mandate_options?: {};
       };
     };
     payment_method_types?: string[];
@@ -25753,6 +25813,9 @@ export function postSetupIntentsIntentConfirm(
     payment_method_options?: {
       card?: {
         request_three_d_secure?: "any" | "automatic";
+      };
+      sepa_debit?: {
+        mandate_options?: {};
       };
     };
     return_url?: string;
