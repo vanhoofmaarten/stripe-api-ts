@@ -5938,7 +5938,7 @@ export function post3DSecure(
  */
 export function get3DSecureThreeDSecure(
   threeDSecure: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -5975,7 +5975,7 @@ export function get3DSecureThreeDSecure(
  * <p>If you want to delete your own account, use the <a href="https://dashboard.stripe.com/account">account information tab in your account settings</a> instead.</p>
  */
 export function deleteAccount(
-  body: {
+  body?: {
     account?: string;
   },
   opts?: Oazapfts.RequestOpts
@@ -6002,7 +6002,7 @@ export function deleteAccount(
  * <p>Retrieves the details of an account.</p>
  */
 export function getAccount(
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -6037,7 +6037,7 @@ export function getAccount(
  * <p>To update your own account, use the <a href="https://dashboard.stripe.com/account">Dashboard</a>. Refer to our <a href="/docs/connect/updating-accounts">Connect</a> documentation to learn more about updating accounts.</p>
  */
 export function postAccount(
-  body: {
+  body?: {
     account_token?: string;
     bank_account?:
       | {
@@ -6333,7 +6333,7 @@ export function postAccount(
  * <p>Create an external account for a given account.</p>
  */
 export function postAccountBankAccounts(
-  body: {
+  body?: {
     bank_account?:
       | {
           account_holder_name?: string;
@@ -6377,7 +6377,7 @@ export function postAccountBankAccounts(
  */
 export function deleteAccountBankAccountsId(
   id: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -6403,7 +6403,7 @@ export function deleteAccountBankAccountsId(
  */
 export function getAccountBankAccountsId(
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -6439,7 +6439,7 @@ export function getAccountBankAccountsId(
  */
 export function postAccountBankAccountsId(
   id: string,
-  body: {
+  body?: {
     account_holder_name?: string;
     account_holder_type?: "" | "company" | "individual";
     address_city?: string;
@@ -6483,7 +6483,7 @@ export function postAccountBankAccountsId(
  * <p>Returns a list of capabilities associated with the account. The capabilities are returned sorted by creation date, with the most recent capability appearing first.</p>
  */
 export function getAccountCapabilities(
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -6522,7 +6522,7 @@ export function getAccountCapabilities(
  */
 export function getAccountCapabilitiesCapability(
   capability: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -6556,7 +6556,7 @@ export function getAccountCapabilitiesCapability(
  */
 export function postAccountCapabilitiesCapability(
   capability: string,
-  body: {
+  body?: {
     expand?: string[];
     requested?: boolean;
   },
@@ -6584,7 +6584,7 @@ export function postAccountCapabilitiesCapability(
  * <p>List external accounts for an account.</p>
  */
 export function getAccountExternalAccounts(
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -6633,7 +6633,7 @@ export function getAccountExternalAccounts(
  * <p>Create an external account for a given account.</p>
  */
 export function postAccountExternalAccounts(
-  body: {
+  body?: {
     bank_account?:
       | {
           account_holder_name?: string;
@@ -6677,7 +6677,7 @@ export function postAccountExternalAccounts(
  */
 export function deleteAccountExternalAccountsId(
   id: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -6703,7 +6703,7 @@ export function deleteAccountExternalAccountsId(
  */
 export function getAccountExternalAccountsId(
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -6739,7 +6739,7 @@ export function getAccountExternalAccountsId(
  */
 export function postAccountExternalAccountsId(
   id: string,
-  body: {
+  body?: {
     account_holder_name?: string;
     account_holder_type?: "" | "company" | "individual";
     address_city?: string;
@@ -6844,7 +6844,7 @@ export function putAccountLogout(
  * <p>Returns a list of people associated with the account’s legal entity. The people are returned sorted by creation date, with the most recent people appearing first.</p>
  */
 export function getAccountPeople(
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -6901,7 +6901,7 @@ export function getAccountPeople(
  * <p>Creates a new person.</p>
  */
 export function postAccountPeople(
-  body: {
+  body?: {
     account?: string;
     address?: {
       city?: string;
@@ -7000,7 +7000,7 @@ export function postAccountPeople(
  */
 export function deleteAccountPeoplePerson(
   person: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -7026,7 +7026,7 @@ export function deleteAccountPeoplePerson(
  */
 export function getAccountPeoplePerson(
   person: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -7060,7 +7060,7 @@ export function getAccountPeoplePerson(
  */
 export function postAccountPeoplePerson(
   person: string,
-  body: {
+  body?: {
     account?: string;
     address?: {
       city?: string;
@@ -7158,7 +7158,7 @@ export function postAccountPeoplePerson(
  * <p>Returns a list of people associated with the account’s legal entity. The people are returned sorted by creation date, with the most recent people appearing first.</p>
  */
 export function getAccountPersons(
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -7215,7 +7215,7 @@ export function getAccountPersons(
  * <p>Creates a new person.</p>
  */
 export function postAccountPersons(
-  body: {
+  body?: {
     account?: string;
     address?: {
       city?: string;
@@ -7314,7 +7314,7 @@ export function postAccountPersons(
  */
 export function deleteAccountPersonsPerson(
   person: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -7340,7 +7340,7 @@ export function deleteAccountPersonsPerson(
  */
 export function getAccountPersonsPerson(
   person: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -7374,7 +7374,7 @@ export function getAccountPersonsPerson(
  */
 export function postAccountPersonsPerson(
   person: string,
-  body: {
+  body?: {
     account?: string;
     address?: {
       city?: string;
@@ -7504,7 +7504,7 @@ export function postAccountLinks(
  * <p>Returns a list of accounts connected to your platform via <a href="/docs/connect">Connect</a>. If you’re not a platform, the list is empty.</p>
  */
 export function getAccounts(
-  body: {},
+  body?: {},
   {
     created,
     endingBefore,
@@ -7564,7 +7564,7 @@ export function getAccounts(
  * To do this, you’ll first need to <a href="https://dashboard.stripe.com/account/applications/settings">register your platform</a>.</p>
  */
 export function postAccounts(
-  body: {
+  body?: {
     account_token?: string;
     bank_account?:
       | {
@@ -7867,7 +7867,7 @@ export function postAccounts(
  */
 export function deleteAccountsAccount(
   account: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -7893,7 +7893,7 @@ export function deleteAccountsAccount(
  */
 export function getAccountsAccount(
   account: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -7929,7 +7929,7 @@ export function getAccountsAccount(
  */
 export function postAccountsAccount(
   account: string,
-  body: {
+  body?: {
     account_token?: string;
     bank_account?:
       | {
@@ -8226,7 +8226,7 @@ export function postAccountsAccount(
  */
 export function postAccountsAccountBankAccounts(
   account: string,
-  body: {
+  body?: {
     bank_account?:
       | {
           account_holder_name?: string;
@@ -8271,7 +8271,7 @@ export function postAccountsAccountBankAccounts(
 export function deleteAccountsAccountBankAccountsId(
   account: string,
   id: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -8298,7 +8298,7 @@ export function deleteAccountsAccountBankAccountsId(
 export function getAccountsAccountBankAccountsId(
   account: string,
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -8335,7 +8335,7 @@ export function getAccountsAccountBankAccountsId(
 export function postAccountsAccountBankAccountsId(
   account: string,
   id: string,
-  body: {
+  body?: {
     account_holder_name?: string;
     account_holder_type?: "" | "company" | "individual";
     address_city?: string;
@@ -8380,7 +8380,7 @@ export function postAccountsAccountBankAccountsId(
  */
 export function getAccountsAccountCapabilities(
   account: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -8420,7 +8420,7 @@ export function getAccountsAccountCapabilities(
 export function getAccountsAccountCapabilitiesCapability(
   account: string,
   capability: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -8455,7 +8455,7 @@ export function getAccountsAccountCapabilitiesCapability(
 export function postAccountsAccountCapabilitiesCapability(
   account: string,
   capability: string,
-  body: {
+  body?: {
     expand?: string[];
     requested?: boolean;
   },
@@ -8484,7 +8484,7 @@ export function postAccountsAccountCapabilitiesCapability(
  */
 export function getAccountsAccountExternalAccounts(
   account: string,
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -8534,7 +8534,7 @@ export function getAccountsAccountExternalAccounts(
  */
 export function postAccountsAccountExternalAccounts(
   account: string,
-  body: {
+  body?: {
     bank_account?:
       | {
           account_holder_name?: string;
@@ -8579,7 +8579,7 @@ export function postAccountsAccountExternalAccounts(
 export function deleteAccountsAccountExternalAccountsId(
   account: string,
   id: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -8606,7 +8606,7 @@ export function deleteAccountsAccountExternalAccountsId(
 export function getAccountsAccountExternalAccountsId(
   account: string,
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -8643,7 +8643,7 @@ export function getAccountsAccountExternalAccountsId(
 export function postAccountsAccountExternalAccountsId(
   account: string,
   id: string,
-  body: {
+  body?: {
     account_holder_name?: string;
     account_holder_type?: "" | "company" | "individual";
     address_city?: string;
@@ -8690,7 +8690,7 @@ export function postAccountsAccountExternalAccountsId(
  */
 export function postAccountsAccountLoginLinks(
   account: string,
-  body: {
+  body?: {
     expand?: string[];
     redirect_url?: string;
   },
@@ -8721,7 +8721,7 @@ export function postAccountsAccountLoginLinks(
  */
 export function putAccountsAccountLogout(
   account: string,
-  body: {
+  body?: {
     expand?: string[];
   },
   opts?: Oazapfts.RequestOpts
@@ -8749,7 +8749,7 @@ export function putAccountsAccountLogout(
  */
 export function getAccountsAccountPeople(
   account: string,
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -8807,7 +8807,7 @@ export function getAccountsAccountPeople(
  */
 export function postAccountsAccountPeople(
   account: string,
-  body: {
+  body?: {
     address?: {
       city?: string;
       country?: string;
@@ -8906,7 +8906,7 @@ export function postAccountsAccountPeople(
 export function deleteAccountsAccountPeoplePerson(
   account: string,
   person: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -8933,7 +8933,7 @@ export function deleteAccountsAccountPeoplePerson(
 export function getAccountsAccountPeoplePerson(
   account: string,
   person: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -8968,7 +8968,7 @@ export function getAccountsAccountPeoplePerson(
 export function postAccountsAccountPeoplePerson(
   account: string,
   person: string,
-  body: {
+  body?: {
     address?: {
       city?: string;
       country?: string;
@@ -9066,7 +9066,7 @@ export function postAccountsAccountPeoplePerson(
  */
 export function getAccountsAccountPersons(
   account: string,
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -9124,7 +9124,7 @@ export function getAccountsAccountPersons(
  */
 export function postAccountsAccountPersons(
   account: string,
-  body: {
+  body?: {
     address?: {
       city?: string;
       country?: string;
@@ -9223,7 +9223,7 @@ export function postAccountsAccountPersons(
 export function deleteAccountsAccountPersonsPerson(
   account: string,
   person: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -9250,7 +9250,7 @@ export function deleteAccountsAccountPersonsPerson(
 export function getAccountsAccountPersonsPerson(
   account: string,
   person: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -9285,7 +9285,7 @@ export function getAccountsAccountPersonsPerson(
 export function postAccountsAccountPersonsPerson(
   account: string,
   person: string,
-  body: {
+  body?: {
     address?: {
       city?: string;
       country?: string;
@@ -9413,7 +9413,7 @@ export function postAccountsAccountReject(
  * <p>List apple pay domains.</p>
  */
 export function getApplePayDomains(
-  body: {},
+  body?: {},
   {
     domainName,
     endingBefore,
@@ -9494,7 +9494,7 @@ export function postApplePayDomains(
  */
 export function deleteApplePayDomainsDomain(
   domain: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -9520,7 +9520,7 @@ export function deleteApplePayDomainsDomain(
  */
 export function getApplePayDomainsDomain(
   domain: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -9553,7 +9553,7 @@ export function getApplePayDomainsDomain(
  * <p>Returns a list of application fees you’ve previously collected. The application fees are returned in sorted order, with the most recent fees appearing first.</p>
  */
 export function getApplicationFees(
-  body: {},
+  body?: {},
   {
     charge,
     created,
@@ -9617,7 +9617,7 @@ export function getApplicationFees(
 export function getApplicationFeesFeeRefundsId(
   fee: string,
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -9654,7 +9654,7 @@ export function getApplicationFeesFeeRefundsId(
 export function postApplicationFeesFeeRefundsId(
   fee: string,
   id: string,
-  body: {
+  body?: {
     expand?: string[];
     metadata?:
       | {
@@ -9687,7 +9687,7 @@ export function postApplicationFeesFeeRefundsId(
  */
 export function getApplicationFeesId(
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -9718,7 +9718,7 @@ export function getApplicationFeesId(
 }
 export function postApplicationFeesIdRefund(
   id: string,
-  body: {
+  body?: {
     amount?: number;
     directive?: string;
     expand?: string[];
@@ -9748,7 +9748,7 @@ export function postApplicationFeesIdRefund(
  */
 export function getApplicationFeesIdRefunds(
   id: string,
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -9806,7 +9806,7 @@ export function getApplicationFeesIdRefunds(
  */
 export function postApplicationFeesIdRefunds(
   id: string,
-  body: {
+  body?: {
     amount?: number;
     expand?: string[];
     metadata?: {
@@ -9838,7 +9838,7 @@ export function postApplicationFeesIdRefunds(
  *  For a sample request, see <a href="/docs/connect/account-balances#accounting-for-negative-balances">Accounting for negative balances</a>.</p>
  */
 export function getBalance(
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -9873,7 +9873,7 @@ export function getBalance(
  * <p>Note that this endpoint was previously called “Balance history” and used the path <code>/v1/balance/history</code>.</p>
  */
 export function getBalanceHistory(
-  body: {},
+  body?: {},
   {
     availableOn,
     created,
@@ -9957,7 +9957,7 @@ export function getBalanceHistory(
  */
 export function getBalanceHistoryId(
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -9992,7 +9992,7 @@ export function getBalanceHistoryId(
  * <p>Note that this endpoint was previously called “Balance history” and used the path <code>/v1/balance/history</code>.</p>
  */
 export function getBalanceTransactions(
-  body: {},
+  body?: {},
   {
     availableOn,
     created,
@@ -10076,7 +10076,7 @@ export function getBalanceTransactions(
  */
 export function getBalanceTransactionsId(
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -10138,7 +10138,7 @@ export function postBillingPortalSessions(
  * <p>Returns a list of your receivers. Receivers are returned sorted by creation date, with the most recently created receivers appearing first.</p>
  */
 export function getBitcoinReceivers(
-  body: {},
+  body?: {},
   {
     active,
     endingBefore,
@@ -10197,7 +10197,7 @@ export function getBitcoinReceivers(
  */
 export function getBitcoinReceiversId(
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -10231,7 +10231,7 @@ export function getBitcoinReceiversId(
  */
 export function getBitcoinReceiversReceiverTransactions(
   receiver: string,
-  body: {},
+  body?: {},
   {
     customer,
     endingBefore,
@@ -10283,7 +10283,7 @@ export function getBitcoinReceiversReceiverTransactions(
  * <p>List bitcoin transacitons for a given receiver.</p>
  */
 export function getBitcoinTransactions(
-  body: {},
+  body?: {},
   {
     customer,
     endingBefore,
@@ -10338,7 +10338,7 @@ export function getBitcoinTransactions(
  * <p>Returns a list of charges you’ve previously created. The charges are returned in sorted order, with the most recent charges appearing first.</p>
  */
 export function getCharges(
-  body: {},
+  body?: {},
   {
     created,
     customer,
@@ -10406,7 +10406,7 @@ export function getCharges(
  * <p>To charge a credit card or other payment source, you create a <code>Charge</code> object. If your API key is in test mode, the supplied payment source (e.g., card) won’t actually be charged, although everything else will occur as if in live mode. (Stripe assumes that the charge would have completed successfully).</p>
  */
 export function postCharges(
-  body: {
+  body?: {
     amount?: number;
     application_fee?: number;
     application_fee_amount?: number;
@@ -10495,7 +10495,7 @@ export function postCharges(
  */
 export function getChargesCharge(
   charge: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -10529,7 +10529,7 @@ export function getChargesCharge(
  */
 export function postChargesCharge(
   charge: string,
-  body: {
+  body?: {
     customer?: string;
     description?: string;
     expand?: string[];
@@ -10585,7 +10585,7 @@ export function postChargesCharge(
  */
 export function postChargesChargeCapture(
   charge: string,
-  body: {
+  body?: {
     amount?: number;
     application_fee?: number;
     application_fee_amount?: number;
@@ -10623,7 +10623,7 @@ export function postChargesChargeCapture(
  */
 export function getChargesChargeDispute(
   charge: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -10654,7 +10654,7 @@ export function getChargesChargeDispute(
 }
 export function postChargesChargeDispute(
   charge: string,
-  body: {
+  body?: {
     evidence?: {
       access_activity_log?: string;
       billing_address?: string;
@@ -10714,7 +10714,7 @@ export function postChargesChargeDispute(
 }
 export function postChargesChargeDisputeClose(
   charge: string,
-  body: {
+  body?: {
     expand?: string[];
   },
   opts?: Oazapfts.RequestOpts
@@ -10752,7 +10752,7 @@ export function postChargesChargeDisputeClose(
  */
 export function postChargesChargeRefund(
   charge: string,
-  body: {
+  body?: {
     amount?: number;
     expand?: string[];
     metadata?:
@@ -10790,7 +10790,7 @@ export function postChargesChargeRefund(
  */
 export function getChargesChargeRefunds(
   charge: string,
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -10840,7 +10840,7 @@ export function getChargesChargeRefunds(
  */
 export function postChargesChargeRefunds(
   charge: string,
-  body: {
+  body?: {
     amount?: number;
     expand?: string[];
     metadata?:
@@ -10879,7 +10879,7 @@ export function postChargesChargeRefunds(
 export function getChargesChargeRefundsRefund(
   charge: string,
   refund: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -10914,7 +10914,7 @@ export function getChargesChargeRefundsRefund(
 export function postChargesChargeRefundsRefund(
   charge: string,
   refund: string,
-  body: {
+  body?: {
     expand?: string[];
     metadata?:
       | {
@@ -10946,7 +10946,7 @@ export function postChargesChargeRefundsRefund(
  * <p>Returns a list of Checkout Sessions.</p>
  */
 export function getCheckoutSessions(
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -11417,7 +11417,7 @@ export function postCheckoutSessions(
  */
 export function getCheckoutSessionsSession(
   session: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -11451,7 +11451,7 @@ export function getCheckoutSessionsSession(
  */
 export function getCheckoutSessionsSessionLineItems(
   session: string,
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -11500,7 +11500,7 @@ export function getCheckoutSessionsSessionLineItems(
  * <p>Lists all Country Spec objects available in the API.</p>
  */
 export function getCountrySpecs(
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -11550,7 +11550,7 @@ export function getCountrySpecs(
  */
 export function getCountrySpecsCountry(
   country: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -11583,7 +11583,7 @@ export function getCountrySpecsCountry(
  * <p>Returns a list of your coupons.</p>
  */
 export function getCoupons(
-  body: {},
+  body?: {},
   {
     created,
     endingBefore,
@@ -11689,7 +11689,7 @@ export function postCoupons(
  */
 export function deleteCouponsCoupon(
   coupon: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -11715,7 +11715,7 @@ export function deleteCouponsCoupon(
  */
 export function getCouponsCoupon(
   coupon: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -11749,7 +11749,7 @@ export function getCouponsCoupon(
  */
 export function postCouponsCoupon(
   coupon: string,
-  body: {
+  body?: {
     expand?: string[];
     metadata?:
       | {
@@ -11782,7 +11782,7 @@ export function postCouponsCoupon(
  * <p>Returns a list of credit notes.</p>
  */
 export function getCreditNotes(
-  body: {},
+  body?: {},
   {
     customer,
     endingBefore,
@@ -11903,7 +11903,7 @@ export function postCreditNotes(
  */
 export function getCreditNotesPreview(
   invoice: string,
-  body: {},
+  body?: {},
   {
     amount,
     creditAmount,
@@ -11982,7 +11982,7 @@ export function getCreditNotesPreview(
  */
 export function getCreditNotesPreviewLines(
   invoice: string,
-  body: {},
+  body?: {},
   {
     amount,
     creditAmount,
@@ -12075,7 +12075,7 @@ export function getCreditNotesPreviewLines(
  */
 export function getCreditNotesCreditNoteLines(
   creditNote: string,
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -12125,7 +12125,7 @@ export function getCreditNotesCreditNoteLines(
  */
 export function getCreditNotesId(
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -12159,7 +12159,7 @@ export function getCreditNotesId(
  */
 export function postCreditNotesId(
   id: string,
-  body: {
+  body?: {
     expand?: string[];
     memo?: string;
     metadata?: {
@@ -12191,7 +12191,7 @@ export function postCreditNotesId(
  */
 export function postCreditNotesIdVoid(
   id: string,
-  body: {
+  body?: {
     expand?: string[];
   },
   opts?: Oazapfts.RequestOpts
@@ -12218,7 +12218,7 @@ export function postCreditNotesIdVoid(
  * <p>Returns a list of your customers. The customers are returned sorted by creation date, with the most recent customers appearing first.</p>
  */
 export function getCustomers(
-  body: {},
+  body?: {},
   {
     created,
     email,
@@ -12280,7 +12280,7 @@ export function getCustomers(
  * <p>Creates a new customer object.</p>
  */
 export function postCustomers(
-  body: {
+  body?: {
     address?:
       | {
           city?: string;
@@ -12396,7 +12396,7 @@ export function postCustomers(
  */
 export function deleteCustomersCustomer(
   customer: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -12422,7 +12422,7 @@ export function deleteCustomersCustomer(
  */
 export function getCustomersCustomer(
   customer: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -12458,7 +12458,7 @@ export function getCustomersCustomer(
  */
 export function postCustomersCustomer(
   customer: string,
-  body: {
+  body?: {
     address?:
       | {
           city?: string;
@@ -12572,7 +12572,7 @@ export function postCustomersCustomer(
  */
 export function getCustomersCustomerBalanceTransactions(
   customer: string,
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -12659,7 +12659,7 @@ export function postCustomersCustomerBalanceTransactions(
 export function getCustomersCustomerBalanceTransactionsTransaction(
   customer: string,
   transaction: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -12694,7 +12694,7 @@ export function getCustomersCustomerBalanceTransactionsTransaction(
 export function postCustomersCustomerBalanceTransactionsTransaction(
   customer: string,
   transaction: string,
-  body: {
+  body?: {
     description?: string;
     expand?: string[];
     metadata?:
@@ -12728,7 +12728,7 @@ export function postCustomersCustomerBalanceTransactionsTransaction(
  */
 export function getCustomersCustomerBankAccounts(
   customer: string,
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -12782,7 +12782,7 @@ export function getCustomersCustomerBankAccounts(
  */
 export function postCustomersCustomerBankAccounts(
   customer: string,
-  body: {
+  body?: {
     alipay_account?: string;
     bank_account?:
       | {
@@ -12846,7 +12846,7 @@ export function postCustomersCustomerBankAccounts(
 export function deleteCustomersCustomerBankAccountsId(
   customer: string,
   id: string,
-  body: {
+  body?: {
     expand?: string[];
   },
   opts?: Oazapfts.RequestOpts
@@ -12875,7 +12875,7 @@ export function deleteCustomersCustomerBankAccountsId(
 export function getCustomersCustomerBankAccountsId(
   customer: string,
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -12910,7 +12910,7 @@ export function getCustomersCustomerBankAccountsId(
 export function postCustomersCustomerBankAccountsId(
   customer: string,
   id: string,
-  body: {
+  body?: {
     account_holder_name?: string;
     account_holder_type?: "company" | "individual";
     address_city?: string;
@@ -12968,7 +12968,7 @@ export function postCustomersCustomerBankAccountsId(
 export function postCustomersCustomerBankAccountsIdVerify(
   customer: string,
   id: string,
-  body: {
+  body?: {
     amounts?: number[];
     expand?: string[];
   },
@@ -12999,7 +12999,7 @@ export function postCustomersCustomerBankAccountsIdVerify(
  */
 export function getCustomersCustomerCards(
   customer: string,
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -13053,7 +13053,7 @@ export function getCustomersCustomerCards(
  */
 export function postCustomersCustomerCards(
   customer: string,
-  body: {
+  body?: {
     alipay_account?: string;
     bank_account?:
       | {
@@ -13117,7 +13117,7 @@ export function postCustomersCustomerCards(
 export function deleteCustomersCustomerCardsId(
   customer: string,
   id: string,
-  body: {
+  body?: {
     expand?: string[];
   },
   opts?: Oazapfts.RequestOpts
@@ -13146,7 +13146,7 @@ export function deleteCustomersCustomerCardsId(
 export function getCustomersCustomerCardsId(
   customer: string,
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -13181,7 +13181,7 @@ export function getCustomersCustomerCardsId(
 export function postCustomersCustomerCardsId(
   customer: string,
   id: string,
-  body: {
+  body?: {
     account_holder_name?: string;
     account_holder_type?: "company" | "individual";
     address_city?: string;
@@ -13238,7 +13238,7 @@ export function postCustomersCustomerCardsId(
  */
 export function deleteCustomersCustomerDiscount(
   customer: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -13261,7 +13261,7 @@ export function deleteCustomersCustomerDiscount(
 }
 export function getCustomersCustomerDiscount(
   customer: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -13295,7 +13295,7 @@ export function getCustomersCustomerDiscount(
  */
 export function getCustomersCustomerSources(
   customer: string,
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -13358,7 +13358,7 @@ export function getCustomersCustomerSources(
  */
 export function postCustomersCustomerSources(
   customer: string,
-  body: {
+  body?: {
     alipay_account?: string;
     bank_account?:
       | {
@@ -13422,7 +13422,7 @@ export function postCustomersCustomerSources(
 export function deleteCustomersCustomerSourcesId(
   customer: string,
   id: string,
-  body: {
+  body?: {
     expand?: string[];
   },
   opts?: Oazapfts.RequestOpts
@@ -13451,7 +13451,7 @@ export function deleteCustomersCustomerSourcesId(
 export function getCustomersCustomerSourcesId(
   customer: string,
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -13486,7 +13486,7 @@ export function getCustomersCustomerSourcesId(
 export function postCustomersCustomerSourcesId(
   customer: string,
   id: string,
-  body: {
+  body?: {
     account_holder_name?: string;
     account_holder_type?: "company" | "individual";
     address_city?: string;
@@ -13544,7 +13544,7 @@ export function postCustomersCustomerSourcesId(
 export function postCustomersCustomerSourcesIdVerify(
   customer: string,
   id: string,
-  body: {
+  body?: {
     amounts?: number[];
     expand?: string[];
   },
@@ -13573,7 +13573,7 @@ export function postCustomersCustomerSourcesIdVerify(
  */
 export function getCustomersCustomerSubscriptions(
   customer: string,
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -13623,7 +13623,7 @@ export function getCustomersCustomerSubscriptions(
  */
 export function postCustomersCustomerSubscriptions(
   customer: string,
-  body: {
+  body?: {
     add_invoice_items?: {
       price?: string;
       price_data?: {
@@ -13732,7 +13732,7 @@ export function postCustomersCustomerSubscriptions(
 export function deleteCustomersCustomerSubscriptionsSubscriptionExposedId(
   customer: string,
   subscriptionExposedId: string,
-  body: {
+  body?: {
     expand?: string[];
     invoice_now?: boolean;
     prorate?: boolean;
@@ -13763,7 +13763,7 @@ export function deleteCustomersCustomerSubscriptionsSubscriptionExposedId(
 export function getCustomersCustomerSubscriptionsSubscriptionExposedId(
   customer: string,
   subscriptionExposedId: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -13798,7 +13798,7 @@ export function getCustomersCustomerSubscriptionsSubscriptionExposedId(
 export function postCustomersCustomerSubscriptionsSubscriptionExposedId(
   customer: string,
   subscriptionExposedId: string,
-  body: {
+  body?: {
     add_invoice_items?: {
       price?: string;
       price_data?: {
@@ -13915,7 +13915,7 @@ export function postCustomersCustomerSubscriptionsSubscriptionExposedId(
 export function deleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount(
   customer: string,
   subscriptionExposedId: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -13939,7 +13939,7 @@ export function deleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscoun
 export function getCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount(
   customer: string,
   subscriptionExposedId: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -13973,7 +13973,7 @@ export function getCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount(
  */
 export function getCustomersCustomerTaxIds(
   customer: string,
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -14086,7 +14086,7 @@ export function postCustomersCustomerTaxIds(
 export function deleteCustomersCustomerTaxIdsId(
   customer: string,
   id: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -14113,7 +14113,7 @@ export function deleteCustomersCustomerTaxIdsId(
 export function getCustomersCustomerTaxIdsId(
   customer: string,
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -14146,7 +14146,7 @@ export function getCustomersCustomerTaxIdsId(
  * <p>Returns a list of your disputes.</p>
  */
 export function getDisputes(
-  body: {},
+  body?: {},
   {
     charge,
     created,
@@ -14212,7 +14212,7 @@ export function getDisputes(
  */
 export function getDisputesDispute(
   dispute: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -14248,7 +14248,7 @@ export function getDisputesDispute(
  */
 export function postDisputesDispute(
   dispute: string,
-  body: {
+  body?: {
     evidence?: {
       access_activity_log?: string;
       billing_address?: string;
@@ -14313,7 +14313,7 @@ export function postDisputesDispute(
  */
 export function postDisputesDisputeClose(
   dispute: string,
-  body: {
+  body?: {
     expand?: string[];
   },
   opts?: Oazapfts.RequestOpts
@@ -14340,7 +14340,7 @@ export function postDisputesDisputeClose(
  * <p>Creates a short-lived API key for a given resource.</p>
  */
 export function postEphemeralKeys(
-  body: {
+  body?: {
     customer?: string;
     expand?: string[];
     issuing_card?: string;
@@ -14370,7 +14370,7 @@ export function postEphemeralKeys(
  */
 export function deleteEphemeralKeysKey(
   key: string,
-  body: {
+  body?: {
     expand?: string[];
   },
   opts?: Oazapfts.RequestOpts
@@ -14397,7 +14397,7 @@ export function deleteEphemeralKeysKey(
  * <p>List events, going back up to 30 days. Each event data is rendered according to Stripe API version at its creation time, specified in <a href="/docs/api/events/object">event object</a> <code>api_version</code> attribute (not according to your current Stripe API version or <code>Stripe-Version</code> header).</p>
  */
 export function getEvents(
-  body: {},
+  body?: {},
   {
     created,
     deliverySuccess,
@@ -14466,7 +14466,7 @@ export function getEvents(
  */
 export function getEventsId(
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -14499,7 +14499,7 @@ export function getEventsId(
  * <p>Returns a list of objects that contain the rates at which foreign currencies are converted to one another. Only shows the currencies for which Stripe supports.</p>
  */
 export function getExchangeRates(
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -14549,7 +14549,7 @@ export function getExchangeRates(
  */
 export function getExchangeRatesRateId(
   rateId: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -14582,7 +14582,7 @@ export function getExchangeRatesRateId(
  * <p>Returns a list of file links.</p>
  */
 export function getFileLinks(
-  body: {},
+  body?: {},
   {
     created,
     endingBefore,
@@ -14682,7 +14682,7 @@ export function postFileLinks(
  */
 export function getFileLinksLink(
   link: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -14716,7 +14716,7 @@ export function getFileLinksLink(
  */
 export function postFileLinksLink(
   link: string,
-  body: {
+  body?: {
     expand?: string[];
     expires_at?: "now" | number | "";
     metadata?:
@@ -14749,7 +14749,7 @@ export function postFileLinksLink(
  * <p>Returns a list of the files that your account has access to. The files are returned sorted by creation date, with the most recently created files appearing first.</p>
  */
 export function getFiles(
-  body: {},
+  body?: {},
   {
     created,
     endingBefore,
@@ -14871,7 +14871,7 @@ export function postFiles(
  */
 export function getFilesFile(
   file: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -14904,7 +14904,7 @@ export function getFilesFile(
  * <p>Returns a list of your invoice items. Invoice items are returned sorted by creation date, with the most recently created invoice items appearing first.</p>
  */
 export function getInvoiceitems(
-  body: {},
+  body?: {},
   {
     created,
     customer,
@@ -15033,7 +15033,7 @@ export function postInvoiceitems(
  */
 export function deleteInvoiceitemsInvoiceitem(
   invoiceitem: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -15059,7 +15059,7 @@ export function deleteInvoiceitemsInvoiceitem(
  */
 export function getInvoiceitemsInvoiceitem(
   invoiceitem: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -15093,7 +15093,7 @@ export function getInvoiceitemsInvoiceitem(
  */
 export function postInvoiceitemsInvoiceitem(
   invoiceitem: string,
-  body: {
+  body?: {
     amount?: number;
     description?: string;
     discountable?: boolean;
@@ -15149,7 +15149,7 @@ export function postInvoiceitemsInvoiceitem(
  * <p>You can list all invoices, or list the invoices for a specific customer. The invoices are returned sorted by creation date, with the most recently created invoices appearing first.</p>
  */
 export function getInvoices(
-  body: {},
+  body?: {},
   {
     collectionMethod,
     created,
@@ -15295,7 +15295,7 @@ export function postInvoices(
  * <p>You can preview the effects of updating a subscription, including a preview of what proration will take place. To ensure that the actual proration is calculated exactly the same as the previewed proration, you should pass a <code>proration_date</code> parameter when doing the actual subscription update. The value passed in should be the same as the <code>subscription_proration_date</code> returned on the upcoming invoice resource. The recommended way to get only the prorations being previewed is to consider only proration line items where <code>period[start]</code> is equal to the <code>subscription_proration_date</code> on the upcoming invoice resource.</p>
  */
 export function getInvoicesUpcoming(
-  body: {},
+  body?: {},
   {
     coupon,
     customer,
@@ -15448,7 +15448,7 @@ export function getInvoicesUpcoming(
  * <p>When retrieving an upcoming invoice, you’ll get a <strong>lines</strong> property containing the total count of line items and the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.</p>
  */
 export function getInvoicesUpcomingLines(
-  body: {},
+  body?: {},
   {
     coupon,
     customer,
@@ -15616,7 +15616,7 @@ export function getInvoicesUpcomingLines(
  */
 export function deleteInvoicesInvoice(
   invoice: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -15642,7 +15642,7 @@ export function deleteInvoicesInvoice(
  */
 export function getInvoicesInvoice(
   invoice: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -15681,7 +15681,7 @@ export function getInvoicesInvoice(
  */
 export function postInvoicesInvoice(
   invoice: string,
-  body: {
+  body?: {
     application_fee_amount?: number;
     auto_advance?: boolean;
     collection_method?: "charge_automatically" | "send_invoice";
@@ -15743,7 +15743,7 @@ export function postInvoicesInvoice(
  */
 export function postInvoicesInvoiceFinalize(
   invoice: string,
-  body: {
+  body?: {
     auto_advance?: boolean;
     expand?: string[];
   },
@@ -15772,7 +15772,7 @@ export function postInvoicesInvoiceFinalize(
  */
 export function getInvoicesInvoiceLines(
   invoice: string,
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -15822,7 +15822,7 @@ export function getInvoicesInvoiceLines(
  */
 export function postInvoicesInvoiceMarkUncollectible(
   invoice: string,
-  body: {
+  body?: {
     expand?: string[];
   },
   opts?: Oazapfts.RequestOpts
@@ -15850,7 +15850,7 @@ export function postInvoicesInvoiceMarkUncollectible(
  */
 export function postInvoicesInvoicePay(
   invoice: string,
-  body: {
+  body?: {
     expand?: string[];
     forgive?: boolean;
     off_session?: boolean;
@@ -15885,7 +15885,7 @@ export function postInvoicesInvoicePay(
  */
 export function postInvoicesInvoiceSend(
   invoice: string,
-  body: {
+  body?: {
     expand?: string[];
   },
   opts?: Oazapfts.RequestOpts
@@ -15913,7 +15913,7 @@ export function postInvoicesInvoiceSend(
  */
 export function postInvoicesInvoiceVoid(
   invoice: string,
-  body: {
+  body?: {
     expand?: string[];
   },
   opts?: Oazapfts.RequestOpts
@@ -15940,7 +15940,7 @@ export function postInvoicesInvoiceVoid(
  * <p>Returns a list of issuer fraud records.</p>
  */
 export function getIssuerFraudRecords(
-  body: {},
+  body?: {},
   {
     charge,
     endingBefore,
@@ -15995,7 +15995,7 @@ export function getIssuerFraudRecords(
  */
 export function getIssuerFraudRecordsIssuerFraudRecord(
   issuerFraudRecord: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -16028,7 +16028,7 @@ export function getIssuerFraudRecordsIssuerFraudRecord(
  * <p>Returns a list of Issuing <code>Authorization</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>
  */
 export function getIssuingAuthorizations(
-  body: {},
+  body?: {},
   {
     card,
     cardholder,
@@ -16097,7 +16097,7 @@ export function getIssuingAuthorizations(
  */
 export function getIssuingAuthorizationsAuthorization(
   authorization: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -16131,7 +16131,7 @@ export function getIssuingAuthorizationsAuthorization(
  */
 export function postIssuingAuthorizationsAuthorization(
   authorization: string,
-  body: {
+  body?: {
     expand?: string[];
     metadata?:
       | {
@@ -16164,7 +16164,7 @@ export function postIssuingAuthorizationsAuthorization(
  */
 export function postIssuingAuthorizationsAuthorizationApprove(
   authorization: string,
-  body: {
+  body?: {
     amount?: number;
     expand?: string[];
     metadata?:
@@ -16198,7 +16198,7 @@ export function postIssuingAuthorizationsAuthorizationApprove(
  */
 export function postIssuingAuthorizationsAuthorizationDecline(
   authorization: string,
-  body: {
+  body?: {
     expand?: string[];
     metadata?:
       | {
@@ -16230,7 +16230,7 @@ export function postIssuingAuthorizationsAuthorizationDecline(
  * <p>Returns a list of Issuing <code>Cardholder</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>
  */
 export function getIssuingCardholders(
-  body: {},
+  body?: {},
   {
     created,
     email,
@@ -17248,7 +17248,7 @@ export function postIssuingCardholders(
  */
 export function getIssuingCardholdersCardholder(
   cardholder: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -17282,7 +17282,7 @@ export function getIssuingCardholdersCardholder(
  */
 export function postIssuingCardholdersCardholder(
   cardholder: string,
-  body: {
+  body?: {
     billing?: {
       address: {
         city: string;
@@ -18226,7 +18226,7 @@ export function postIssuingCardholdersCardholder(
  * <p>Returns a list of Issuing <code>Card</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>
  */
 export function getIssuingCards(
-  body: {},
+  body?: {},
   {
     cardholder,
     created,
@@ -19235,7 +19235,7 @@ export function postIssuingCards(
  */
 export function getIssuingCardsCard(
   card: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -19269,7 +19269,7 @@ export function getIssuingCardsCard(
  */
 export function postIssuingCardsCard(
   card: string,
-  body: {
+  body?: {
     cancellation_reason?: "lost" | "stolen";
     expand?: string[];
     metadata?:
@@ -20185,7 +20185,7 @@ export function postIssuingCardsCard(
  * <p>Returns a list of Issuing <code>Dispute</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>
  */
 export function getIssuingDisputes(
-  body: {},
+  body?: {},
   {
     created,
     endingBefore,
@@ -20358,7 +20358,7 @@ export function postIssuingDisputes(
  */
 export function getIssuingDisputesDispute(
   dispute: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -20392,7 +20392,7 @@ export function getIssuingDisputesDispute(
  */
 export function postIssuingDisputesDispute(
   dispute: string,
-  body: {
+  body?: {
     evidence?: {
       canceled?:
         | {
@@ -20501,7 +20501,7 @@ export function postIssuingDisputesDispute(
  */
 export function postIssuingDisputesDisputeSubmit(
   dispute: string,
-  body: {
+  body?: {
     expand?: string[];
     metadata?:
       | {
@@ -20533,7 +20533,7 @@ export function postIssuingDisputesDisputeSubmit(
  * <p>Returns a list of Issuing <code>Settlement</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>
  */
 export function getIssuingSettlements(
-  body: {},
+  body?: {},
   {
     created,
     endingBefore,
@@ -20593,7 +20593,7 @@ export function getIssuingSettlements(
  */
 export function getIssuingSettlementsSettlement(
   settlement: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -20627,7 +20627,7 @@ export function getIssuingSettlementsSettlement(
  */
 export function postIssuingSettlementsSettlement(
   settlement: string,
-  body: {
+  body?: {
     expand?: string[];
     metadata?: {
       [key: string]: string;
@@ -20657,7 +20657,7 @@ export function postIssuingSettlementsSettlement(
  * <p>Returns a list of Issuing <code>Transaction</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>
  */
 export function getIssuingTransactions(
-  body: {},
+  body?: {},
   {
     card,
     cardholder,
@@ -20723,7 +20723,7 @@ export function getIssuingTransactions(
  */
 export function getIssuingTransactionsTransaction(
   transaction: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -20757,7 +20757,7 @@ export function getIssuingTransactionsTransaction(
  */
 export function postIssuingTransactionsTransaction(
   transaction: string,
-  body: {
+  body?: {
     expand?: string[];
     metadata?:
       | {
@@ -20790,7 +20790,7 @@ export function postIssuingTransactionsTransaction(
  */
 export function getMandatesMandate(
   mandate: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -20823,7 +20823,7 @@ export function getMandatesMandate(
  * <p>Returns a list of your order returns. The returns are returned sorted by creation date, with the most recently created return appearing first.</p>
  */
 export function getOrderReturns(
-  body: {},
+  body?: {},
   {
     created,
     endingBefore,
@@ -20886,7 +20886,7 @@ export function getOrderReturns(
  */
 export function getOrderReturnsId(
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -20919,7 +20919,7 @@ export function getOrderReturnsId(
  * <p>Returns a list of your orders. The orders are returned sorted by creation date, with the most recently created orders appearing first.</p>
  */
 export function getOrders(
-  body: {},
+  body?: {},
   {
     created,
     customer,
@@ -21081,7 +21081,7 @@ export function postOrders(
  */
 export function getOrdersId(
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -21115,7 +21115,7 @@ export function getOrdersId(
  */
 export function postOrdersId(
   id: string,
-  body: {
+  body?: {
     coupon?: string;
     expand?: string[];
     metadata?:
@@ -21155,7 +21155,7 @@ export function postOrdersId(
  */
 export function postOrdersIdPay(
   id: string,
-  body: {
+  body?: {
     application_fee?: number;
     customer?: string;
     email?: string;
@@ -21190,7 +21190,7 @@ export function postOrdersIdPay(
  */
 export function postOrdersIdReturns(
   id: string,
-  body: {
+  body?: {
     expand?: string[];
     items?:
       | {
@@ -21226,7 +21226,7 @@ export function postOrdersIdReturns(
  * <p>Returns a list of PaymentIntents.</p>
  */
 export function getPaymentIntents(
-  body: {},
+  body?: {},
   {
     created,
     customer,
@@ -21547,7 +21547,7 @@ export function postPaymentIntents(
  */
 export function getPaymentIntentsIntent(
   intent: string,
-  body: {},
+  body?: {},
   {
     clientSecret,
     expand,
@@ -21592,7 +21592,7 @@ export function getPaymentIntentsIntent(
  */
 export function postPaymentIntentsIntent(
   intent: string,
-  body: {
+  body?: {
     amount?: number;
     application_fee_amount?: number | "";
     currency?: string;
@@ -21823,7 +21823,7 @@ export function postPaymentIntentsIntent(
  */
 export function postPaymentIntentsIntentCancel(
   intent: string,
-  body: {
+  body?: {
     cancellation_reason?:
       | "abandoned"
       | "duplicate"
@@ -21860,7 +21860,7 @@ export function postPaymentIntentsIntentCancel(
  */
 export function postPaymentIntentsIntentCapture(
   intent: string,
-  body: {
+  body?: {
     amount_to_capture?: number;
     application_fee_amount?: number;
     expand?: string[];
@@ -21919,7 +21919,7 @@ export function postPaymentIntentsIntentCapture(
  */
 export function postPaymentIntentsIntentConfirm(
   intent: string,
-  body: {
+  body?: {
     client_secret?: string;
     error_on_requires_action?: boolean;
     expand?: string[];
@@ -22173,7 +22173,7 @@ export function getPaymentMethods(
     | "p24"
     | "sepa_debit"
     | "sofort",
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -22224,7 +22224,7 @@ export function getPaymentMethods(
  * <p>Creates a PaymentMethod object. Read the <a href="/docs/stripe-js/reference#stripe-create-payment-method">Stripe.js reference</a> to learn how to create PaymentMethods via Stripe.js.</p>
  */
 export function postPaymentMethods(
-  body: {
+  body?: {
     alipay?: {};
     au_becs_debit?: {
       account_number: string;
@@ -22382,7 +22382,7 @@ export function postPaymentMethods(
  */
 export function getPaymentMethodsPaymentMethod(
   paymentMethod: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -22416,7 +22416,7 @@ export function getPaymentMethodsPaymentMethod(
  */
 export function postPaymentMethodsPaymentMethod(
   paymentMethod: string,
-  body: {
+  body?: {
     billing_details?: {
       address?:
         | {
@@ -22507,7 +22507,7 @@ export function postPaymentMethodsPaymentMethodAttach(
  */
 export function postPaymentMethodsPaymentMethodDetach(
   paymentMethod: string,
-  body: {
+  body?: {
     expand?: string[];
   },
   opts?: Oazapfts.RequestOpts
@@ -22534,7 +22534,7 @@ export function postPaymentMethodsPaymentMethodDetach(
  * <p>Returns a list of existing payouts sent to third-party bank accounts or that Stripe has sent you. The payouts are returned in sorted order, with the most recently created payouts appearing first.</p>
  */
 export function getPayouts(
-  body: {},
+  body?: {},
   {
     arrivalDate,
     created,
@@ -22651,7 +22651,7 @@ export function postPayouts(
  */
 export function getPayoutsPayout(
   payout: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -22685,7 +22685,7 @@ export function getPayoutsPayout(
  */
 export function postPayoutsPayout(
   payout: string,
-  body: {
+  body?: {
     expand?: string[];
     metadata?:
       | {
@@ -22718,7 +22718,7 @@ export function postPayoutsPayout(
  */
 export function postPayoutsPayoutCancel(
   payout: string,
-  body: {
+  body?: {
     expand?: string[];
   },
   opts?: Oazapfts.RequestOpts
@@ -22748,7 +22748,7 @@ export function postPayoutsPayoutCancel(
  */
 export function postPayoutsPayoutReverse(
   payout: string,
-  body: {
+  body?: {
     expand?: string[];
     metadata?: {
       [key: string]: string;
@@ -22778,7 +22778,7 @@ export function postPayoutsPayoutReverse(
  * <p>Returns a list of your plans.</p>
  */
 export function getPlans(
-  body: {},
+  body?: {},
   {
     active,
     created,
@@ -22912,7 +22912,7 @@ export function postPlans(
  */
 export function deletePlansPlan(
   plan: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -22938,7 +22938,7 @@ export function deletePlansPlan(
  */
 export function getPlansPlan(
   plan: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -22972,7 +22972,7 @@ export function getPlansPlan(
  */
 export function postPlansPlan(
   plan: string,
-  body: {
+  body?: {
     active?: boolean;
     expand?: string[];
     metadata?:
@@ -23008,7 +23008,7 @@ export function postPlansPlan(
  * <p>Returns a list of your prices.</p>
  */
 export function getPrices(
-  body: {},
+  body?: {},
   {
     active,
     created,
@@ -23156,7 +23156,7 @@ export function postPrices(
  */
 export function getPricesPrice(
   price: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -23190,7 +23190,7 @@ export function getPricesPrice(
  */
 export function postPricesPrice(
   price: string,
-  body: {
+  body?: {
     active?: boolean;
     expand?: string[];
     lookup_key?: string;
@@ -23226,7 +23226,7 @@ export function postPricesPrice(
  * <p>Returns a list of your products. The products are returned sorted by creation date, with the most recently created products appearing first.</p>
  */
 export function getProducts(
-  body: {},
+  body?: {},
   {
     active,
     created,
@@ -23346,7 +23346,7 @@ export function postProducts(
  */
 export function deleteProductsId(
   id: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -23372,7 +23372,7 @@ export function deleteProductsId(
  */
 export function getProductsId(
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -23406,7 +23406,7 @@ export function getProductsId(
  */
 export function postProductsId(
   id: string,
-  body: {
+  body?: {
     active?: boolean;
     attributes?: string[] | "";
     caption?: string;
@@ -23457,7 +23457,7 @@ export function postProductsId(
  * <p>Returns a list of your promotion codes.</p>
  */
 export function getPromotionCodes(
-  body: {},
+  body?: {},
   {
     active,
     code,
@@ -23570,7 +23570,7 @@ export function postPromotionCodes(
  */
 export function getPromotionCodesPromotionCode(
   promotionCode: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -23604,7 +23604,7 @@ export function getPromotionCodesPromotionCode(
  */
 export function postPromotionCodesPromotionCode(
   promotionCode: string,
-  body: {
+  body?: {
     active?: boolean;
     expand?: string[];
     metadata?:
@@ -23637,7 +23637,7 @@ export function postPromotionCodesPromotionCode(
  * <p>Returns a list of early fraud warnings.</p>
  */
 export function getRadarEarlyFraudWarnings(
-  body: {},
+  body?: {},
   {
     charge,
     endingBefore,
@@ -23692,7 +23692,7 @@ export function getRadarEarlyFraudWarnings(
  */
 export function getRadarEarlyFraudWarningsEarlyFraudWarning(
   earlyFraudWarning: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -23726,7 +23726,7 @@ export function getRadarEarlyFraudWarningsEarlyFraudWarning(
  */
 export function getRadarValueListItems(
   valueList: string,
-  body: {},
+  body?: {},
   {
     created,
     endingBefore,
@@ -23819,7 +23819,7 @@ export function postRadarValueListItems(
  */
 export function deleteRadarValueListItemsItem(
   item: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -23845,7 +23845,7 @@ export function deleteRadarValueListItemsItem(
  */
 export function getRadarValueListItemsItem(
   item: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -23878,7 +23878,7 @@ export function getRadarValueListItemsItem(
  * <p>Returns a list of <code>ValueList</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>
  */
 export function getRadarValueLists(
-  body: {},
+  body?: {},
   {
     alias,
     contains,
@@ -23984,7 +23984,7 @@ export function postRadarValueLists(
  */
 export function deleteRadarValueListsValueList(
   valueList: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -24010,7 +24010,7 @@ export function deleteRadarValueListsValueList(
  */
 export function getRadarValueListsValueList(
   valueList: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -24044,7 +24044,7 @@ export function getRadarValueListsValueList(
  */
 export function postRadarValueListsValueList(
   valueList: string,
-  body: {
+  body?: {
     alias?: string;
     expand?: string[];
     metadata?: {
@@ -24076,7 +24076,7 @@ export function postRadarValueListsValueList(
  * <p>Returns a list of your recipients. The recipients are returned sorted by creation date, with the most recently created recipients appearing first.</p>
  */
 export function getRecipients(
-  body: {},
+  body?: {},
   {
     created,
     endingBefore,
@@ -24182,7 +24182,7 @@ export function postRecipients(
  */
 export function deleteRecipientsId(
   id: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -24208,7 +24208,7 @@ export function deleteRecipientsId(
  */
 export function getRecipientsId(
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -24246,7 +24246,7 @@ export function getRecipientsId(
  */
 export function postRecipientsId(
   id: string,
-  body: {
+  body?: {
     bank_account?: string;
     card?: string;
     default_card?: string;
@@ -24285,7 +24285,7 @@ export function postRecipientsId(
  * <p>Returns a list of all refunds you’ve previously created. The refunds are returned in sorted order, with the most recent refunds appearing first. For convenience, the 10 most recent refunds are always available by default on the charge object.</p>
  */
 export function getRefunds(
-  body: {},
+  body?: {},
   {
     charge,
     created,
@@ -24350,7 +24350,7 @@ export function getRefunds(
  * <p>Create a refund.</p>
  */
 export function postRefunds(
-  body: {
+  body?: {
     amount?: number;
     charge?: string;
     expand?: string[];
@@ -24389,7 +24389,7 @@ export function postRefunds(
  */
 export function getRefundsRefund(
   refund: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -24425,7 +24425,7 @@ export function getRefundsRefund(
  */
 export function postRefundsRefund(
   refund: string,
-  body: {
+  body?: {
     expand?: string[];
     metadata?:
       | {
@@ -24457,7 +24457,7 @@ export function postRefundsRefund(
  * <p>Returns a list of Report Runs, with the most recent appearing first. (Requires a <a href="https://stripe.com/docs/keys#test-live-modes">live-mode API key</a>.)</p>
  */
 export function getReportingReportRuns(
-  body: {},
+  body?: {},
   {
     created,
     endingBefore,
@@ -25183,7 +25183,7 @@ export function postReportingReportRuns(
  */
 export function getReportingReportRunsReportRun(
   reportRun: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -25216,7 +25216,7 @@ export function getReportingReportRunsReportRun(
  * <p>Returns a full list of Report Types. (Requires a <a href="https://stripe.com/docs/keys#test-live-modes">live-mode API key</a>.)</p>
  */
 export function getReportingReportTypes(
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -25255,7 +25255,7 @@ export function getReportingReportTypes(
  */
 export function getReportingReportTypesReportType(
   reportType: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -25288,7 +25288,7 @@ export function getReportingReportTypesReportType(
  * <p>Returns a list of <code>Review</code> objects that have <code>open</code> set to <code>true</code>. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>
  */
 export function getReviews(
-  body: {},
+  body?: {},
   {
     created,
     endingBefore,
@@ -25348,7 +25348,7 @@ export function getReviews(
  */
 export function getReviewsReview(
   review: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -25382,7 +25382,7 @@ export function getReviewsReview(
  */
 export function postReviewsReviewApprove(
   review: string,
-  body: {
+  body?: {
     expand?: string[];
   },
   opts?: Oazapfts.RequestOpts
@@ -25410,7 +25410,7 @@ export function postReviewsReviewApprove(
  */
 export function getSetupAttempts(
   setupIntent: string,
-  body: {},
+  body?: {},
   {
     created,
     endingBefore,
@@ -25470,7 +25470,7 @@ export function getSetupAttempts(
  * <p>Returns a list of SetupIntents.</p>
  */
 export function getSetupIntents(
-  body: {},
+  body?: {},
   {
     created,
     customer,
@@ -25538,7 +25538,7 @@ export function getSetupIntents(
  * to collect any required permissions to charge the payment method later.</p>
  */
 export function postSetupIntents(
-  body: {
+  body?: {
     confirm?: boolean;
     customer?: string;
     description?: string;
@@ -25601,7 +25601,7 @@ export function postSetupIntents(
  */
 export function getSetupIntentsIntent(
   intent: string,
-  body: {},
+  body?: {},
   {
     clientSecret,
     expand,
@@ -25640,7 +25640,7 @@ export function getSetupIntentsIntent(
  */
 export function postSetupIntentsIntent(
   intent: string,
-  body: {
+  body?: {
     customer?: string;
     description?: string;
     expand?: string[];
@@ -25684,7 +25684,7 @@ export function postSetupIntentsIntent(
  */
 export function postSetupIntentsIntentCancel(
   intent: string,
-  body: {
+  body?: {
     cancellation_reason?: "abandoned" | "duplicate" | "requested_by_customer";
     expand?: string[];
   },
@@ -25725,7 +25725,7 @@ export function postSetupIntentsIntentCancel(
  */
 export function postSetupIntentsIntentConfirm(
   intent: string,
-  body: {
+  body?: {
     client_secret?: string;
     expand?: string[];
     mandate_data?:
@@ -25781,7 +25781,7 @@ export function postSetupIntentsIntentConfirm(
  * <p>Returns a list of scheduled query runs.</p>
  */
 export function getSigmaScheduledQueryRuns(
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -25831,7 +25831,7 @@ export function getSigmaScheduledQueryRuns(
  */
 export function getSigmaScheduledQueryRunsScheduledQueryRun(
   scheduledQueryRun: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -25864,7 +25864,7 @@ export function getSigmaScheduledQueryRunsScheduledQueryRun(
  * <p>Returns a list of your SKUs. The SKUs are returned sorted by creation date, with the most recently created SKUs appearing first.</p>
  */
 export function getSkus(
-  body: {},
+  body?: {},
   {
     active,
     attributes,
@@ -25981,7 +25981,7 @@ export function postSkus(
  */
 export function deleteSkusId(
   id: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -26007,7 +26007,7 @@ export function deleteSkusId(
  */
 export function getSkusId(
   id: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -26043,7 +26043,7 @@ export function getSkusId(
  */
 export function postSkusId(
   id: string,
-  body: {
+  body?: {
     active?: boolean;
     attributes?: {
       [key: string]: string;
@@ -26096,7 +26096,7 @@ export function postSkusId(
  * <p>Creates a new source object.</p>
  */
 export function postSources(
-  body: {
+  body?: {
     amount?: number;
     currency?: string;
     customer?: string;
@@ -26205,7 +26205,7 @@ export function postSources(
  */
 export function getSourcesSource(
   source: string,
-  body: {},
+  body?: {},
   {
     clientSecret,
     expand,
@@ -26246,7 +26246,7 @@ export function getSourcesSource(
  */
 export function postSourcesSource(
   source: string,
-  body: {
+  body?: {
     amount?: number;
     expand?: string[];
     mandate?: {
@@ -26344,7 +26344,7 @@ export function postSourcesSource(
 export function getSourcesSourceMandateNotificationsMandateNotification(
   mandateNotification: string,
   source: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -26378,7 +26378,7 @@ export function getSourcesSourceMandateNotificationsMandateNotification(
  */
 export function getSourcesSourceSourceTransactions(
   source: string,
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -26429,7 +26429,7 @@ export function getSourcesSourceSourceTransactions(
 export function getSourcesSourceSourceTransactionsSourceTransaction(
   source: string,
   sourceTransaction: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -26492,7 +26492,7 @@ export function postSourcesSourceVerify(
  */
 export function getSubscriptionItems(
   subscription: string,
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -26598,7 +26598,7 @@ export function postSubscriptionItems(
  */
 export function deleteSubscriptionItemsItem(
   item: string,
-  body: {
+  body?: {
     clear_usage?: boolean;
     proration_behavior?: "always_invoice" | "create_prorations" | "none";
     proration_date?: number;
@@ -26628,7 +26628,7 @@ export function deleteSubscriptionItemsItem(
  */
 export function getSubscriptionItemsItem(
   item: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -26662,7 +26662,7 @@ export function getSubscriptionItemsItem(
  */
 export function postSubscriptionItemsItem(
   item: string,
-  body: {
+  body?: {
     billing_thresholds?:
       | {
           usage_gte: number;
@@ -26722,7 +26722,7 @@ export function postSubscriptionItemsItem(
  */
 export function getSubscriptionItemsSubscriptionItemUsageRecordSummaries(
   subscriptionItem: string,
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -26808,7 +26808,7 @@ export function postSubscriptionItemsSubscriptionItemUsageRecords(
  * <p>Retrieves the list of your subscription schedules.</p>
  */
 export function getSubscriptionSchedules(
-  body: {},
+  body?: {},
   {
     canceledAt,
     completedAt,
@@ -26903,7 +26903,7 @@ export function getSubscriptionSchedules(
  * <p>Creates a new subscription schedule object. Each customer can have up to 500 active or scheduled subscriptions.</p>
  */
 export function postSubscriptionSchedules(
-  body: {
+  body?: {
     customer?: string;
     default_settings?: {
       billing_cycle_anchor?: "automatic" | "phase_start";
@@ -27017,7 +27017,7 @@ export function postSubscriptionSchedules(
  */
 export function getSubscriptionSchedulesSchedule(
   schedule: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -27051,7 +27051,7 @@ export function getSubscriptionSchedulesSchedule(
  */
 export function postSubscriptionSchedulesSchedule(
   schedule: string,
-  body: {
+  body?: {
     default_settings?: {
       billing_cycle_anchor?: "automatic" | "phase_start";
       billing_thresholds?:
@@ -27164,7 +27164,7 @@ export function postSubscriptionSchedulesSchedule(
  */
 export function postSubscriptionSchedulesScheduleCancel(
   schedule: string,
-  body: {
+  body?: {
     expand?: string[];
     invoice_now?: boolean;
     prorate?: boolean;
@@ -27194,7 +27194,7 @@ export function postSubscriptionSchedulesScheduleCancel(
  */
 export function postSubscriptionSchedulesScheduleRelease(
   schedule: string,
-  body: {
+  body?: {
     expand?: string[];
     preserve_cancel_date?: boolean;
   },
@@ -27222,7 +27222,7 @@ export function postSubscriptionSchedulesScheduleRelease(
  * <p>By default, returns a list of subscriptions that have not been canceled. In order to list canceled subscriptions, specify <code>status=canceled</code>.</p>
  */
 export function getSubscriptions(
-  body: {},
+  body?: {},
   {
     collectionMethod,
     created,
@@ -27431,7 +27431,7 @@ export function postSubscriptions(
  */
 export function deleteSubscriptionsSubscriptionExposedId(
   subscriptionExposedId: string,
-  body: {
+  body?: {
     expand?: string[];
     invoice_now?: boolean;
     prorate?: boolean;
@@ -27461,7 +27461,7 @@ export function deleteSubscriptionsSubscriptionExposedId(
  */
 export function getSubscriptionsSubscriptionExposedId(
   subscriptionExposedId: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -27495,7 +27495,7 @@ export function getSubscriptionsSubscriptionExposedId(
  */
 export function postSubscriptionsSubscriptionExposedId(
   subscriptionExposedId: string,
-  body: {
+  body?: {
     add_invoice_items?: {
       price?: string;
       price_data?: {
@@ -27611,7 +27611,7 @@ export function postSubscriptionsSubscriptionExposedId(
  */
 export function deleteSubscriptionsSubscriptionExposedIdDiscount(
   subscriptionExposedId: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -27636,7 +27636,7 @@ export function deleteSubscriptionsSubscriptionExposedIdDiscount(
  * <p>Returns a list of your tax rates. Tax rates are returned sorted by creation date, with the most recently created tax rates appearing first.</p>
  */
 export function getTaxRates(
-  body: {},
+  body?: {},
   {
     active,
     created,
@@ -27738,7 +27738,7 @@ export function postTaxRates(
  */
 export function getTaxRatesTaxRate(
   taxRate: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -27772,7 +27772,7 @@ export function getTaxRatesTaxRate(
  */
 export function postTaxRatesTaxRate(
   taxRate: string,
-  body: {
+  body?: {
     active?: boolean;
     description?: string;
     display_name?: string;
@@ -27808,7 +27808,7 @@ export function postTaxRatesTaxRate(
  * <p>To connect to a reader the Stripe Terminal SDK needs to retrieve a short-lived connection token from Stripe, proxied through your server. On your backend, add an endpoint that creates and returns a connection token.</p>
  */
 export function postTerminalConnectionTokens(
-  body: {
+  body?: {
     expand?: string[];
     location?: string;
   },
@@ -27836,7 +27836,7 @@ export function postTerminalConnectionTokens(
  * <p>Returns a list of <code>Location</code> objects.</p>
  */
 export function getTerminalLocations(
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -27927,7 +27927,7 @@ export function postTerminalLocations(
  */
 export function deleteTerminalLocationsLocation(
   location: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -27953,7 +27953,7 @@ export function deleteTerminalLocationsLocation(
  */
 export function getTerminalLocationsLocation(
   location: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -27987,7 +27987,7 @@ export function getTerminalLocationsLocation(
  */
 export function postTerminalLocationsLocation(
   location: string,
-  body: {
+  body?: {
     address?: {
       city?: string;
       country: string;
@@ -28028,7 +28028,7 @@ export function postTerminalLocationsLocation(
  * <p>Returns a list of <code>Reader</code> objects.</p>
  */
 export function getTerminalReaders(
-  body: {},
+  body?: {},
   {
     deviceType,
     endingBefore,
@@ -28122,7 +28122,7 @@ export function postTerminalReaders(
  */
 export function deleteTerminalReadersReader(
   reader: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -28148,7 +28148,7 @@ export function deleteTerminalReadersReader(
  */
 export function getTerminalReadersReader(
   reader: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -28182,7 +28182,7 @@ export function getTerminalReadersReader(
  */
 export function postTerminalReadersReader(
   reader: string,
-  body: {
+  body?: {
     expand?: string[];
     label?: string;
     metadata?:
@@ -28216,7 +28216,7 @@ export function postTerminalReadersReader(
  * This token can be used with any API method in place of a bank account dictionary. This token can be used only once, by attaching it to a <a href="#accounts">Custom account</a>.</p>
  */
 export function postTokens(
-  body: {
+  body?: {
     account?: {
       business_type?:
         | "company"
@@ -28479,7 +28479,7 @@ export function postTokens(
  */
 export function getTokensToken(
   token: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -28512,7 +28512,7 @@ export function getTokensToken(
  * <p>Returns a list of top-ups.</p>
  */
 export function getTopups(
-  body: {},
+  body?: {},
   {
     amount,
     created,
@@ -28623,7 +28623,7 @@ export function postTopups(
  */
 export function getTopupsTopup(
   topup: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -28657,7 +28657,7 @@ export function getTopupsTopup(
  */
 export function postTopupsTopup(
   topup: string,
-  body: {
+  body?: {
     description?: string;
     expand?: string[];
     metadata?:
@@ -28691,7 +28691,7 @@ export function postTopupsTopup(
  */
 export function postTopupsTopupCancel(
   topup: string,
-  body: {
+  body?: {
     expand?: string[];
   },
   opts?: Oazapfts.RequestOpts
@@ -28718,7 +28718,7 @@ export function postTopupsTopupCancel(
  * <p>Returns a list of existing transfers sent to connected accounts. The transfers are returned in sorted order, with the most recently created transfers appearing first.</p>
  */
 export function getTransfers(
-  body: {},
+  body?: {},
   {
     created,
     destination,
@@ -28821,7 +28821,7 @@ export function postTransfers(
  */
 export function getTransfersIdReversals(
   id: string,
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -28875,7 +28875,7 @@ export function getTransfersIdReversals(
  */
 export function postTransfersIdReversals(
   id: string,
-  body: {
+  body?: {
     amount?: number;
     description?: string;
     expand?: string[];
@@ -28911,7 +28911,7 @@ export function postTransfersIdReversals(
  */
 export function getTransfersTransfer(
   transfer: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -28947,7 +28947,7 @@ export function getTransfersTransfer(
  */
 export function postTransfersTransfer(
   transfer: string,
-  body: {
+  body?: {
     description?: string;
     expand?: string[];
     metadata?:
@@ -28982,7 +28982,7 @@ export function postTransfersTransfer(
 export function getTransfersTransferReversalsId(
   id: string,
   transfer: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -29019,7 +29019,7 @@ export function getTransfersTransferReversalsId(
 export function postTransfersTransferReversalsId(
   id: string,
   transfer: string,
-  body: {
+  body?: {
     expand?: string[];
     metadata?:
       | {
@@ -29051,7 +29051,7 @@ export function postTransfersTransferReversalsId(
  * <p>Returns a list of your webhook endpoints.</p>
  */
 export function getWebhookEndpoints(
-  body: {},
+  body?: {},
   {
     endingBefore,
     expand,
@@ -29400,7 +29400,7 @@ export function postWebhookEndpoints(
  */
 export function deleteWebhookEndpointsWebhookEndpoint(
   webhookEndpoint: string,
-  body: {},
+  body?: {},
   opts?: Oazapfts.RequestOpts
 ) {
   return oazapfts.fetchJson<
@@ -29426,7 +29426,7 @@ export function deleteWebhookEndpointsWebhookEndpoint(
  */
 export function getWebhookEndpointsWebhookEndpoint(
   webhookEndpoint: string,
-  body: {},
+  body?: {},
   {
     expand,
   }: {
@@ -29460,7 +29460,7 @@ export function getWebhookEndpointsWebhookEndpoint(
  */
 export function postWebhookEndpointsWebhookEndpoint(
   webhookEndpoint: string,
-  body: {
+  body?: {
     description?: string;
     disabled?: boolean;
     enabled_events?: (
